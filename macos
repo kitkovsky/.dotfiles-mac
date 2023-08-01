@@ -1,0 +1,72 @@
+#!/bin/zsh
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+email="okitkowski114@gmail.com"
+ssh_config_value="Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519"
+
+# BREW
+echo "${YELLOW}========== INSTALLING BREW REQUIREMENTS ==========${NC}"
+xargs -t -I {} brew install {} < brew-requirements.txt
+echo "\n"
+
+echo "${YELLOW}========== INSTALLING CASKS ==========${NC}"
+xargs -t -I {} brew install --cask {} < brew-casks.txt
+echo "\n"
+
+# GIT
+echo "${YELLOW}========== SETTING UP GIT ==========${NC}"
+git config --global user.name kitkovsky
+git config --global user.email "$email"
+
+ssh-keygen -t ed25519 -C "$email"
+eval "$(ssh-agent -s)"
+
+touch ~/.ssh/config
+echo "$ssh_config_value" > ~/.ssh/config
+
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+pbcopy < ~/.ssh/id_ed25519.pub
+
+echo "${BLUE}=========="
+echo "The ssh public key has been copied to your clipboard, finish adding it to your GitHub account here:"
+echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+echo "Press Enter to continue..."
+echo "==========${NC}"
+read
+
+echo "\n"
+
+# STOWING DOTFILES
+echo "${YELLOW}========== STOWING DOTFILES ==========${NC}"
+stow --target=${HOME} */
+
+# NEOVIM
+echo "${YELLOW}========== INSTALLING PACKER ==========${NC}"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# RUST
+echo "${YELLOW}========== INSTALLING CARGO ==========${NC}"
+curl https://sh.rustup.rs -sSf | sh
+
+# DEFAULTS
+echo "${YELLOW}========== WRITING DEFAULTS ==========${NC}"
+defaults write com.apple.Dock autohide-delay -float 0
+
+# for app in "Dock" "Finder"; do
+for app in "Dock"; do
+  killall "${app}" > /dev/null 2>&1
+done
+
+# TODO
+# upload the syspref screen cast somewhere, blur the card info and include the link? || or require a password for it, maybe google drive
+# FIND DEFAULTS FOR
+# option+1 to move between spaces
+# apps in the dock

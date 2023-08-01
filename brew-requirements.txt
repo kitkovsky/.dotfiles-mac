@@ -1,0 +1,12 @@
+lazygit
+wget
+ripgrep
+tmux
+neovim
+ranger
+node
+fd
+neofetch
+btop
+stow
+tree
