@@ -68,3 +68,8 @@ done
 
 echo "${GREEN}========== ALL DONE ==========${NC}"
 echo "Finish the setup by setting system preferences from here: https://drive.google.com/file/d/1AkVio-yDTeh0IqmXVOSPGWdGPH8QdiBl/view?usp=drive_link"
+
+# TODO
+# amethyst floating windows list
+# defaults domain for option+1 to switch spaces
+# good order for apps in dock
