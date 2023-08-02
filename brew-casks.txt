@@ -7,3 +7,4 @@ appcleaner
 logi-options-plus
 aldente
 tg-pro
+iterm2
