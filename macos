@@ -52,7 +52,6 @@ cd -
 
 # STOWING DOTFILES
 echo "${YELLOW}========== STOWING DOTFILES ==========${NC}"
-rm ~/.zshrc
 stow --target=${HOME} */
 
 # NEOVIM
