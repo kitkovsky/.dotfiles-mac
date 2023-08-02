@@ -52,6 +52,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # FONTS
+echo "${YELLOW}========== FONTS ==========${NC}"
 cd ~/Library/Fonts
 wget -i ./fonts-list.txt
 cd -
@@ -74,17 +75,43 @@ echo "${YELLOW}========== WRITING DEFAULTS ==========${NC}"
 defaults write com.apple.Dock autohide-delay -float 0
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles-mac/iterm2/.config/iterm2"
+defaults write com.amethyst.Amethyst floating \
+'(
+        {
+        id = "com.googlecode.iterm2";
+        "window-titles" =         (
+        );
+    },
+        {
+        id = "com.apple.Safari";
+        "window-titles" =         (
+        );
+    },
+        {
+        id = "com.spotify.client";
+        "window-titles" =         (
+        );
+    },
+        {
+        id = "com.google.Chrome";
+        "window-titles" =         (
+        );
+    },
+        {
+        id = "com.apple.Photos";
+        "window-titles" =         (
+        );
+    },
+        {
+        id = "com.apple.mail";
+        "window-titles" =         (
+        );
+    }
+)'
 
-for app in "Dock"; do
+for app in "Dock" "Amethyst" "iTerm2"; do
   killall "${app}" > /dev/null 2>&1
 done
 
 echo "${GREEN}========== ALL DONE ==========${NC}"
-echo "Finish the setup by setting system preferences from here: https://drive.google.com/file/d/1AkVio-yDTeh0IqmXVOSPGWdGPH8QdiBl/view?usp=drive_link"
-
-# TODO
-# fix git?
-# amethyst floating windows list
-# defaults domain for option+1 to switch spaces
-# good order for apps in dock
-# control centre widgets
+echo "Finish the setup by setting system preferences from here: https://drive.google.com/file/d/1OOL6S6Mq6pkmsiN-yq6Da6Na-vGXlOAs/view?usp=sharing"
