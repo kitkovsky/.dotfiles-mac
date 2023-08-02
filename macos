@@ -44,17 +44,10 @@ read
 
 echo "\n"
 
-# OH-MY-ZSH
-echo "${YELLOW}========== OH-MY-ZSH ==========${NC}"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 # FONTS
 echo "${YELLOW}========== FONTS ==========${NC}"
 cd ~/Library/Fonts
-wget -i ./fonts-list.txt
+wget -i ~/.dotfiles-mac/fonts-list.txt
 cd -
 
 # STOWING DOTFILES
@@ -109,9 +102,10 @@ defaults write com.amethyst.Amethyst floating \
     }
 )'
 
-for app in "Dock" "Amethyst" "iTerm2"; do
+for app in "Dock" "Amethyst"; do
   killall "${app}" > /dev/null 2>&1
 done
 
-echo "${GREEN}========== ALL DONE ==========${NC}"
-echo "Finish the setup by setting system preferences from here: https://drive.google.com/file/d/1OOL6S6Mq6pkmsiN-yq6Da6Na-vGXlOAs/view?usp=sharing"
+# OH-MY-ZSH
+echo "${YELLOW}========== OH-MY-ZSH ==========${NC}"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

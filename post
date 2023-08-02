@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+GREEN="\033[0;32m"
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+stow --target=${HOME} zsh
+
+echo "${GREEN}========== ALL DONE ==========${NC}"
+echo "Finish the setup by setting system preferences from here: https://drive.google.com/file/d/1OOL6S6Mq6pkmsiN-yq6Da6Na-vGXlOAs/view?usp=sharing"
