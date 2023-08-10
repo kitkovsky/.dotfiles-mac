@@ -10,3 +10,4 @@ neofetch
 btop
 stow
 tree
+fzf
