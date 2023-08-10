@@ -28,3 +28,5 @@ end
 
 
 vim.cmd("highlight SignColumn guibg=NONE")
+vim.cmd("highlight Normal guibg=none")
+vim.cmd("highlight WinBar guibg=none")
