@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
 		"yaml",
 		"bash",
 		"rust",
+		"astro",
 	},
 
 	sync_install = false,
