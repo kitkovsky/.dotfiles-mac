@@ -9,3 +9,4 @@ aldente
 tg-pro
 iterm2
 messenger
+iina
