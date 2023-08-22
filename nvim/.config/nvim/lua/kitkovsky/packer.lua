@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("ellisonleao/gruvbox.nvim")
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
 
 	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
@@ -24,30 +24,19 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("rhysd/committia.vim")
-
 	use("sbdchd/neoformat")
 	use("mattn/emmet-vim")
-	use("kevinoid/vim-jsonc")
-	use("ckipp01/stylua-nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-context")
 	use("stevearc/oil.nvim")
 
 	use("ThePrimeagen/harpoon")
-	use("mbbill/undotree")
+	-- use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
 	use("github/copilot.vim")
-
-	use({
-		"glacambre/firenvim",
-		run = function()
-			vim.fn["firenvim#install"](0)
-		end,
-	})
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
