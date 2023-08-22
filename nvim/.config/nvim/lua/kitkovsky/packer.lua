@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 	use("ellisonleao/gruvbox.nvim")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	use("airblade/vim-gitgutter")
+	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
 	use({
 		"windwp/nvim-autopairs",
