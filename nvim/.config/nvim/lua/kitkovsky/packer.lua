@@ -17,7 +17,12 @@ return require("packer").startup(function(use)
 
 	use("airblade/vim-gitgutter")
 	use("kdheepak/lazygit.nvim")
-	use("jiangmiao/auto-pairs")
+	use({
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	})
 
 	use("rhysd/committia.vim")
 
