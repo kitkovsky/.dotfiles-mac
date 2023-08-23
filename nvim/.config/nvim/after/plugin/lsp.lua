@@ -1,24 +1,39 @@
-local lsp = require("lsp-zero")
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 local nnoremap = require("kitkovsky.keymap").nnoremap
 
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-	"tsserver",
-	"dockerls",
-	"pyright",
-	"html",
+local servers = {
+	"astro",
 	"cssls",
-	"tailwindcss",
+	"dockerls",
 	"eslint",
 	"graphql",
+	"html",
 	"lua_ls",
+	"pyright",
 	"rust_analyzer",
-  "astro",
+	"tailwindcss",
+	"tsserver",
+}
+
+require("mason-lspconfig").setup({
+	ensure_installed = servers,
 })
 
--- fix Undefined global 'vim'
-lsp.configure("lua_ls", {
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		on_attach = function()
+			require("lsp_signature").on_attach()
+		end,
+		capabilities = capabilities,
+	})
+end
+
+lspconfig["lua_ls"].setup({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -28,7 +43,7 @@ lsp.configure("lua_ls", {
 	},
 })
 
-lsp.configure("tailwindcss", {
+lspconfig["tailwindcss"].setup({
 	settings = {
 		tailwindCSS = {
 			classAttributes = { "class", "className", ".*ClassName" },
@@ -36,74 +51,23 @@ lsp.configure("tailwindcss", {
 	},
 })
 
-local cmp = require("cmp")
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-	["<C-y>"] = cmp.mapping.confirm({ select = true }),
-	["<C-Space>"] = cmp.mapping.complete(),
-	["<Tab>"] = cmp.config.disable,
-	["<S-Tab>"] = cmp.config.disable,
-	["<CR>"] = cmp.config.disable,
-})
+local remaps = {
+	["gd"] = vim.lsp.buf.definition,
+	["gD"] = vim.lsp.buf.declaration,
+	["gt"] = vim.lsp.buf.type_definition,
+	["gr"] = vim.lsp.buf.references,
+	["gi"] = vim.lsp.buf.implementation,
+	["K"] = vim.lsp.buf.hover,
+	["[d"] = vim.diagnostic.goto_prev,
+	["]d"] = vim.diagnostic.goto_next,
+	["<leader>rn"] = vim.lsp.buf.rename,
+	["<leader>qf"] = vim.lsp.buf.code_action,
+	["<leader>d"] = vim.diagnostic.open_float,
+}
 
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings,
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "path" },
-		{ name = "buffer" },
-	},
-})
-
-lsp.set_preferences({
-	suggest_lsp_servers = true,
-	sign_icons = {
-		error = "E",
-		warn = "W",
-		hint = "H",
-		info = "I",
-	},
-})
-
-lsp.on_attach(function()
-	nnoremap("gd", function()
-		vim.lsp.buf.definition()
-	end, { silent = true })
-	nnoremap("gD", function()
-		vim.lsp.buf.declaration()
-	end, { silent = true })
-	nnoremap("gt", function()
-		vim.lsp.buf.type_definition()
-	end, { silent = true })
-	nnoremap("gr", function()
-		vim.lsp.buf.references()
-	end, { silent = true })
-	nnoremap("gi", function()
-		vim.lsp.buf.implementation()
-	end, { silent = true })
-	nnoremap("K", function()
-		vim.lsp.buf.hover()
-	end, { silent = true })
-	nnoremap("[d", function()
-		vim.diagnostic.goto_prev()
-	end, { silent = true })
-	nnoremap("]d", function()
-		vim.diagnostic.goto_next()
-	end, { silent = true })
-	nnoremap("<leader>rn", function()
-		vim.lsp.buf.rename()
-	end, { silent = true })
-	nnoremap("<leader>qf", function()
-		vim.lsp.buf.code_action()
-	end, { silent = true })
-	nnoremap("<leader>d", function()
-		vim.diagnostic.open_float()
-	end, { silent = true })
-end)
-
-lsp.setup()
+for key, func in pairs(remaps) do
+	nnoremap(key, func, { silent = true })
+end
 
 vim.diagnostic.config({
 	virtual_text = true,
