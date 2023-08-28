@@ -32,6 +32,9 @@ require("formatter").setup({
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
+    json = {
+      require("formatter.filetypes.json").prettier,
+    },
 		astro = {
 			function()
 				return {
