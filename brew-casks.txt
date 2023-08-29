@@ -10,4 +10,3 @@ tg-pro
 iterm2
 messenger
 iina
-notion
