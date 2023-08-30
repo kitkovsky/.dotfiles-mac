@@ -11,3 +11,4 @@ btop
 stow
 tree
 fzf
+youtube-dl
