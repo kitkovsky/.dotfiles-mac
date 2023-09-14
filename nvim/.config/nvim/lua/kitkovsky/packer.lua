@@ -24,7 +24,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("sbdchd/neoformat")
 	use("mattn/emmet-vim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })

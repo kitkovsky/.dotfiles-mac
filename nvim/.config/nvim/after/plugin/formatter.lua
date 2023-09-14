@@ -1,6 +1,6 @@
 require("formatter").setup({
 	logging = true,
-	log_level = vim.log.levels.WARN,
+	log_level = vim.log.levels.DEBUG,
 	filetype = {
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
@@ -32,9 +32,9 @@ require("formatter").setup({
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
-    json = {
-      require("formatter.filetypes.json").prettier,
-    },
+		json = {
+			require("formatter.filetypes.json").prettier,
+		},
 		astro = {
 			function()
 				return {
@@ -55,4 +55,4 @@ require("formatter").setup({
 })
 
 local nnoremap = require("kitkovsky.keymap").nnoremap
-nnoremap("<leader>nf", "<cmd>FormatWrite<CR>")
+nnoremap("<leader>nf", "<cmd>FormatWriteLock<CR>")
