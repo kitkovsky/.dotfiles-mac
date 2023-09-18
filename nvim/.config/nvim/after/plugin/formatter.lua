@@ -35,6 +35,9 @@ require("formatter").setup({
 		json = {
 			require("formatter.filetypes.json").prettier,
 		},
+		yaml = {
+			require("formatter.filetypes.yaml").prettier,
+		},
 		astro = {
 			function()
 				return {
@@ -55,4 +58,11 @@ require("formatter").setup({
 })
 
 local nnoremap = require("kitkovsky.keymap").nnoremap
-nnoremap("<leader>nf", "<cmd>FormatWriteLock<CR>")
+nnoremap("<leader>nf", "<cmd>FormatWrite<CR>")
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+	callback = function()
+		vim.cmd("FormatWrite")
+	end,
+	group = vim.api.nvim_create_augroup("lsp_document_format", { clear = true }),
+})
