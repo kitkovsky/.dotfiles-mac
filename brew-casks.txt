@@ -11,3 +11,4 @@ iterm2
 messenger
 iina
 tableplus
+omnidisksweeper
