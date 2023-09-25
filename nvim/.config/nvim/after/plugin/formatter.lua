@@ -62,6 +62,10 @@ nnoremap("<leader>nf", "<cmd>FormatWrite<CR>")
 
 vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = function()
+		if vim.bo.filetype == "oil" then
+			return
+		end
+
 		vim.cmd("FormatWrite")
 	end,
 	group = vim.api.nvim_create_augroup("lsp_document_format", { clear = true }),
