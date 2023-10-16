@@ -8,8 +8,8 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -25,4 +25,8 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "buffer" },
 	}),
+})
+
+vim.diagnostic.config({
+	float = { border = "rounded" },
 })
