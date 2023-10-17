@@ -5,6 +5,7 @@ tmux
 neovim
 ranger
 node
+pnpm
 fd
 neofetch
 btop
