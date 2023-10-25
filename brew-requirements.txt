@@ -13,3 +13,4 @@ stow
 tree
 fzf
 youtube-dl
+vercel-cli
