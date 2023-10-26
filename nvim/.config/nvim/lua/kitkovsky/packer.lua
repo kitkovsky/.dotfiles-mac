@@ -13,7 +13,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("ellisonleao/gruvbox.nvim")
-	-- use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "rose-pine/neovim", as = "rose-pine" })
 
 	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
