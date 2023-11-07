@@ -39,6 +39,9 @@ vim.opt.updatetime = 50
 
 vim.opt.shortmess:append("c")
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 vim.g.mapleader = " "
 
 vim.g.netrw_banner = 0
