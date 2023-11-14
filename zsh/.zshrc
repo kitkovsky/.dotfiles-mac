@@ -116,6 +116,7 @@ alias gs="git status"
 alias lg="lazygit"
 alias dc="docker-compose"
 alias please-help-i-dropped-a-very-important-stash="git log --graph --oneline --decorate --all \$( git fsck --no-reflog | awk '/dangling commit/ {print \$3}' )"
+alias sleep="pmset sleepnow"
 
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
