@@ -24,7 +24,7 @@ require("formatter").setup({
 			require("formatter.filetypes.graphql").prettier,
 		},
 		python = {
-			require("formatter.filetypes.python").black,
+			require("formatter.filetypes.python").ruff,
 		},
 		lua = {
 			require("formatter.filetypes.lua").stylua,
