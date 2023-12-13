@@ -8,7 +8,6 @@ local servers = {
 	"cssls",
 	"dockerls",
 	"eslint",
-	"graphql",
 	"html",
 	"lua_ls",
 	"ruff_lsp",

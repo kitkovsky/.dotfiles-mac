@@ -20,9 +20,6 @@ require("formatter").setup({
 		html = {
 			require("formatter.filetypes.html").prettier,
 		},
-		graphql = {
-			require("formatter.filetypes.graphql").prettier,
-		},
 		python = {
 			require("formatter.filetypes.python").ruff,
 		},
