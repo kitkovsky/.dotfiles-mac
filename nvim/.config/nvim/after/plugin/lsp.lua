@@ -11,7 +11,7 @@ local servers = {
 	"graphql",
 	"html",
 	"lua_ls",
-	"pyright",
+	"ruff_lsp",
 	"rust_analyzer",
 	"tailwindcss",
 	"tsserver",
