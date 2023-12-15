@@ -1,0 +1,110 @@
+layouts:
+  - tall
+  - fullscreen
+
+mod1:
+  - option
+
+mod2:
+  - option
+  - shift
+
+floating-is-blacklist: false
+floating:
+  - "com.googlecode.iterm2"
+  - "com.apple.Safari"
+  - "com.spotify.client"
+  - "com.google.Chrome"
+  - "com.apple.Photos"
+  - "com.apple.logic10"
+  - "com.tinyapp.TablePlus"
+  - "com.focusrite.FocusriteControl"
+  - "com.apple.mail"
+
+window-margins: true
+window-margin-size: 12
+
+enables-layout-hud: false
+enables-layout-hud-on-space-change: false
+
+mouse-swaps-windows: true
+float-small-windows: true
+
+# change focused window
+focus-cw:
+  mod: mod1
+  key: l
+focus-ccw:
+  mod: mod1
+  key: h
+
+# move focused window
+swap-cw:
+  mod: mod2
+  key: l
+swap-ccw:
+  mod: mod2
+  key: h
+
+# change main window size
+shrink-main:
+  mod: mod1
+  key: "-"
+expand-main:
+  mod: mod1
+  key: =
+
+# move focused window to nth virtual desktop
+throw-space-1:
+  mod: mod2
+  key: 1
+throw-space-2:
+  mod: mod2
+  key: 2
+throw-space-3:
+  mod: mod2
+  key: 3
+throw-space-4:
+  mod: mod2
+  key: 4
+throw-space-5:
+  mod: mod2
+  key: 5
+throw-space-6:
+  mod: mod2
+  key: 6
+throw-space-7:
+  mod: mod2
+  key: 7
+throw-space-8:
+  mod: mod2
+  key: 8
+throw-space-9:
+  mod: mod2
+  key: 9
+throw-space-10:
+  mod: mod2
+  key: 0
+
+# swap focused window with main
+swap-main:
+  mod: mod1
+  key: enter
+
+# focus main window
+focus-main:
+  mod: mod1
+  key: m
+
+# toggle float on focused window
+toggle-float:
+  mod: mod1
+  key: t
+
+# move focused window to the next/prev screen
+swap-screen-ccw:
+  mod: <NONE>
+  key: <NONE>
+swap-screen-cw:
+  mod: <NONE>
+  key: <NONE>

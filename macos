@@ -73,28 +73,6 @@ defaults write com.apple.Dock autohide-delay -float 0
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles-mac/iterm2/.config/iterm2"
 
-fullscreen_app_ids=(
-  "com.googlecode.iterm2"
-  "com.apple.Safari"
-  "com.spotify.client"
-  "com.google.Chrome"
-  "com.apple.Photos"
-  "com.apple.logic10"
-  "com.tinyapp.TablePlus"
-  "com.focusrite.FocusriteControl"
-  "com.apple.mail"
-)
-
-app_ids_str="("
-
-for app_id in $fullscreen_app_ids; do
-  app_ids_str+="{ id = \"$app_id\"; \"window-titles\" = (); },"
-done
-
-app_ids_str+=")"
-
-defaults write com.amethyst.Amethyst floating "$app_ids_str"
-
 for app in "Dock" "Amethyst"; do
   killall "${app}" > /dev/null 2>&1
 done
