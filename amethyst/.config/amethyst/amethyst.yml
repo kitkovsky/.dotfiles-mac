@@ -33,10 +33,10 @@ float-small-windows: true
 # change focused window
 focus-cw:
   mod: mod1
-  key: l
+  key: j
 focus-ccw:
   mod: mod1
-  key: h
+  key: k
 
 # move focused window
 swap-cw:
