@@ -20,6 +20,7 @@ floating:
   - "com.tinyapp.TablePlus"
   - "com.focusrite.FocusriteControl"
   - "com.apple.mail"
+  - "com.apple.freeform"
 
 window-margins: true
 window-margin-size: 12
