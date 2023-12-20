@@ -12,6 +12,11 @@ ssh_config_value="Host github.com
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519"
 
+if [[ $(csrutil status) != *"disabled"* ]]; then
+  echo "${RED}========== DISABLE SIP TO CONTINUE, EXITING ==========${NC}"
+  exit -1
+fi
+
 # BREW
 echo "${YELLOW}========== INSTALLING BREW REQUIREMENTS ==========${NC}"
 brew tap oven-sh/bun
@@ -52,6 +57,12 @@ cd ~/Library/Fonts
 wget -i ~/.dotfiles-mac/fonts-list.txt
 cd -
 
+# YABAI
+echo "${YELLOW}========== CONFIGURING YABAI ==========${NC}"
+sudo nvram boot-args=-arm64e_preview_abi
+echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai)) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+echo "\n"
+
 # STOWING DOTFILES
 echo "${YELLOW}========== STOWING DOTFILES ==========${NC}"
 stow --target=${HOME} */
@@ -73,9 +84,7 @@ defaults write com.apple.Dock autohide-delay -float 0
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles-mac/iterm2/.config/iterm2"
 
-for app in "Dock" "Amethyst"; do
-  killall "${app}" > /dev/null 2>&1
-done
+killall Dock > /dev/null 2>&1
 
 # OH-MY-ZSH
 echo "${YELLOW}========== OH-MY-ZSH ==========${NC}"

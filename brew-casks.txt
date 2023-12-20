@@ -1,4 +1,3 @@
-amethyst
 ticktick
 google-chrome
 spotify
