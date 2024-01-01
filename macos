@@ -43,7 +43,7 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 pbcopy < ~/.ssh/id_ed25519.pub
 
 echo "${BLUE}=========="
-echo "The ssh public key has been copied to your clipboard, finish adding it to your GitHub account here:"
+echo "The ssh public key has been copied to your clipboard, finish by adding it to your GitHub account here:"
 echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
 echo "Press Enter to continue..."
 echo "==========${NC}"
