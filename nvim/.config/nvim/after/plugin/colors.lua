@@ -2,7 +2,7 @@
 
 local GRUVBOX_BABY = "gruvbox"
 local ROSE_PINE = "rose-pine"
-local current_colorscheme = ROSE_PINE
+local current_colorscheme = GRUVBOX_BABY
 
 vim.o.background = "dark"
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
