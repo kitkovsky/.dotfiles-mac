@@ -30,3 +30,7 @@ nnoremap("J", "mzJ`z")
 
 -- never press Q
 nnoremap("Q", "<nop>")
+
+-- move lines up and down in visual mode
+vnoremap("J", ":m '>+1<CR>gv=gv")
+vnoremap("K", ":m '<-2<CR>gv=gv")
