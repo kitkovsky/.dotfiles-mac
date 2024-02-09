@@ -2,39 +2,6 @@ require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.DEBUG,
 	filetype = {
-		javascript = {
-			require("formatter.filetypes.javascript").prettier,
-		},
-		javascriptreact = {
-			require("formatter.filetypes.javascriptreact").prettier,
-		},
-		typescript = {
-			require("formatter.filetypes.typescript").prettier,
-		},
-		typescriptreact = {
-			require("formatter.filetypes.typescriptreact").prettier,
-		},
-		css = {
-			require("formatter.filetypes.css").prettier,
-		},
-		html = {
-			require("formatter.filetypes.html").prettier,
-		},
-		python = {
-			require("formatter.filetypes.python").ruff,
-		},
-		lua = {
-			require("formatter.filetypes.lua").stylua,
-		},
-		rust = {
-			require("formatter.filetypes.rust").rustfmt,
-		},
-		json = {
-			require("formatter.filetypes.json").prettier,
-		},
-		yaml = {
-			require("formatter.filetypes.yaml").prettier,
-		},
 		astro = {
 			function()
 				return {
@@ -47,6 +14,39 @@ require("formatter").setup({
 					stdin = false,
 				}
 			end,
+		},
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
+		html = {
+			require("formatter.filetypes.html").prettier,
+		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascriptreact").prettier,
+		},
+		json = {
+			require("formatter.filetypes.json").prettier,
+		},
+		lua = {
+			require("formatter.filetypes.lua").stylua,
+		},
+		python = {
+			require("formatter.filetypes.python").ruff,
+		},
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+		},
+		typescriptreact = {
+			require("formatter.filetypes.typescriptreact").prettier,
+		},
+		yaml = {
+			require("formatter.filetypes.yaml").prettier,
 		},
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
