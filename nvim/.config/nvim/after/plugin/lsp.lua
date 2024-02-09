@@ -5,6 +5,7 @@ local nnoremap = require("kitkovsky.keymap").nnoremap
 
 local servers = {
 	"astro",
+	"clangd",
 	"cssls",
 	"dockerls",
 	"eslint",
