@@ -11,6 +11,7 @@ local servers = {
 	"eslint",
 	"html",
 	"lua_ls",
+	"pyright",
 	"ruff_lsp",
 	"rust_analyzer",
 	"tailwindcss",
