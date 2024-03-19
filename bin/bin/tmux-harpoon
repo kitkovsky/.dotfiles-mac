@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+selected=$(tmux list-sessions -F#S | nl -w1 -s' ' | fzf | awk '{print $2}')
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+tmux switch-client -t $selected
