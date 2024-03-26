@@ -18,3 +18,4 @@ tursodatabase/tap/turso
 bun
 koekeishiya/formulae/yabai
 koekeishiya/formulae/skhd
+go
