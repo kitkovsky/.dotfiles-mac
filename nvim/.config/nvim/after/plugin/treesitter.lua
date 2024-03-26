@@ -3,6 +3,7 @@ require("nvim-treesitter.configs").setup({
 		"astro",
 		"bash",
 		"css",
+		"go",
 		"html",
 		"javascript",
 		"json",

@@ -9,6 +9,7 @@ local servers = {
 	"cssls",
 	"dockerls",
 	"eslint",
+	"gopls",
 	"html",
 	"lua_ls",
 	"pyright",
