@@ -1,9 +1,18 @@
 #!/bin/zsh
 
-selected=$(tmux list-sessions -F#S | nl -w1 -s' ' | fzf | awk '{print $2}')
-
-if [[ -z $selected ]]; then
+if [[ $1 == "toggle" ]]; then
+    tmux display-popup -E "vim ~/tmux-harpoon"
     exit 0
 fi
 
-tmux switch-client -t $selected
+if [[ $1 == "add" ]]; then
+    current_session_name=$(tmux display-message -p '#S')
+    echo $current_session_name >> ~/tmux-harpoon
+    exit 0
+fi
+
+if [[ $1 == "switch" ]]; then
+    session_name=$(sed -n "$2p" ~/tmux-harpoon)
+    tmux switch -t $session_name
+    exit 0
+fi
