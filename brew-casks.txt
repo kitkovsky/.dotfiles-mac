@@ -10,4 +10,6 @@ iterm2
 messenger
 iina
 omnidisksweeper
+slack
 insomnia
+tableplus
