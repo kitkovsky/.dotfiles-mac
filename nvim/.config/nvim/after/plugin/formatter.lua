@@ -24,6 +24,9 @@ require("formatter").setup({
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},
+		scss = {
+			require("formatter.filetypes.css").prettier,
+		},
 		go = {
 			require("formatter.filetypes.go").gofmt,
 		},
