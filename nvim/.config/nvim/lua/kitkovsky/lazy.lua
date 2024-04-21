@@ -36,7 +36,7 @@ require("lazy").setup({
 	"tpope/vim-commentary",
 	"tpope/vim-surround",
 
-	"github/copilot.vim",
+	-- "github/copilot.vim",
 	"mattn/emmet-vim",
 
 	-- LSP
