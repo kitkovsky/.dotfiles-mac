@@ -20,3 +20,4 @@ koekeishiya/formulae/yabai
 koekeishiya/formulae/skhd
 go
 pyenv
+nvm
