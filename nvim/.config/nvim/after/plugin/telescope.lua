@@ -12,6 +12,12 @@ require("telescope").setup({
 			},
 		},
 
+		extensions = {
+			["ui-select"] = {
+				require("telescope.themes").get_dropdown(),
+			},
+		},
+
 		layout_config = {
 			horizontal = {
 				width = 0.95,
@@ -19,6 +25,9 @@ require("telescope").setup({
 		},
 	},
 })
+
+pcall(require("telescope").load_extension, "fzf")
+pcall(require("telescope").load_extension, "ui-select")
 
 local builtin = require("telescope.builtin")
 

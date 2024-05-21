@@ -15,7 +15,23 @@ require("lazy").setup({
 	"ellisonleao/gruvbox.nvim",
 	-- { "rose-pine/neovim", name = "rose-pine" },
 
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+	{
+		"nvim-telescope/telescope.nvim",
+		event = "VimEnter",
+		branch = "0.1.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+			{ "nvim-telescope/telescope-ui-select.nvim" },
+			{ "nvim-tree/nvim-web-devicons" },
+		},
+	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-context",
 
