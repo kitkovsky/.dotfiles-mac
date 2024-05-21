@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -55,9 +56,25 @@ require("lazy").setup({
 	-- "github/copilot.vim",
 	"mattn/emmet-vim",
 
-	-- LSP
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
+	{ -- LSP
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			{
+				"j-hui/fidget.nvim",
+				opts = {
+					notification = {
+						window = {
+							winblend = 0,
+						},
+					},
+				},
+			},
+			{ "folke/neodev.nvim", opts = {} },
+		},
+	},
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
