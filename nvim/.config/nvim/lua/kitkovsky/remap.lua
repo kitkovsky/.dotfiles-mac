@@ -1,36 +1,42 @@
-local nnoremap = require("kitkovsky.keymap").nnoremap
-local vnoremap = require("kitkovsky.keymap").vnoremap
-
 -- better tabbing
-vnoremap("<", "<gv")
-vnoremap(">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- window navigation
-nnoremap("<C-h>", "<C-w>h")
-nnoremap("<C-j>", "<C-w>j")
-nnoremap("<C-k>", "<C-w>k")
-nnoremap("<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 -- close a buffer with <leader>bd
-nnoremap("<leader>bd", "<cmd>bdelete<CR>")
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>")
 
 -- quickfix list things
-nnoremap("<leader>j", "<cmd>cnext<CR>zz")
-nnoremap("<leader>k", "<cmd>cprev<CR>zz")
-nnoremap("<leader>co", "<cmd>copen<CR>")
-nnoremap("<leader>cq", "<cmd>cclose<CR>")
+vim.keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>")
+vim.keymap.set("n", "<leader>cq", "<cmd>cclose<CR>")
 
 -- Y yanks to the end of the line
-nnoremap("Y", "y$")
+vim.keymap.set("n", "Y", "y$")
 
 -- keeping in centered
-nnoremap("n", "nzzzv")
-nnoremap("N", "Nzzzv")
-nnoremap("J", "mzJ`z")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- never press Q
-nnoremap("Q", "<nop>")
+vim.keymap.set("n", "Q", "<nop>")
 
 -- move lines up and down in visual mode
-vnoremap("J", ":m '>+1<CR>gv=gv")
-vnoremap("K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- disable highlighting after searching with <Esc>
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- disable arrow keys in normal mode
+vim.keymap.set("n", "<left>", "")
+vim.keymap.set("n", "<right>", "")
+vim.keymap.set("n", "<up>", "")
+vim.keymap.set("n", "<down>", "")

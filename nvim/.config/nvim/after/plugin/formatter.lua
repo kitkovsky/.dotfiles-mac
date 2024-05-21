@@ -66,8 +66,7 @@ require("formatter").setup({
 	},
 })
 
-local nnoremap = require("kitkovsky.keymap").nnoremap
-nnoremap("<leader>nf", "<cmd>FormatWrite<CR>")
+vim.keymap.set("n", "<leader>nf", "<cmd>FormatWrite<CR>")
 
 vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = function()

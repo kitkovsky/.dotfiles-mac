@@ -1,11 +1,9 @@
-local nnoremap = require("kitkovsky.keymap").nnoremap
-
-nnoremap("]h", "<cmd>Gitsigns next_hunk<CR>")
-nnoremap("[h", "<cmd>Gitsigns prev_hunk<CR>")
-nnoremap("<leader>hp", "<cmd>Gitsigns preview_hunk<CR>")
-nnoremap("<leader>hu", "<cmd>Gitsigns reset_hunk<CR>")
-nnoremap("<leader>hs", "<cmd>Gitsigns stage_hunk<CR>")
-nnoremap("<leader>hr", "<cmd>Gitsigns undo_stage_hunk<CR>")
+vim.keymap.set("n", "]h", "<cmd>Gitsigns next_hunk<CR>")
+vim.keymap.set("n", "[h", "<cmd>Gitsigns prev_hunk<CR>")
+vim.keymap.set("n", "<leader>hp", "<cmd>Gitsigns preview_hunk<CR>")
+vim.keymap.set("n", "<leader>hu", "<cmd>Gitsigns reset_hunk<CR>")
+vim.keymap.set("n", "<leader>hs", "<cmd>Gitsigns stage_hunk<CR>")
+vim.keymap.set("n", "<leader>hr", "<cmd>Gitsigns undo_stage_hunk<CR>")
 
 require("gitsigns").setup({
 	signs = {

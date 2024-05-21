@@ -1,3 +1,1 @@
-local nnoremap = require("kitkovsky.keymap").nnoremap
-
-nnoremap("<leader>u", "<cmd>UndotreeToggle<CR>")
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>")

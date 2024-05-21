@@ -1,8 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local nnoremap = require("kitkovsky.keymap").nnoremap
-
 local servers = {
 	"astro",
 	"clangd",
@@ -75,7 +73,7 @@ local remaps = {
 }
 
 for key, func in pairs(remaps) do
-	nnoremap(key, func, { silent = true })
+	vim.keymap.set("n", key, func, { silent = true })
 end
 
 vim.diagnostic.config({
