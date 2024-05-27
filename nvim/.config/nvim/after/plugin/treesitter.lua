@@ -1,3 +1,4 @@
+---@diagnostic disable-next-line: missing-fields
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"astro",
@@ -22,6 +23,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
+	indent = { enable = true },
 	autopairs = {
 		enable = true,
 	},
