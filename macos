@@ -32,6 +32,7 @@ echo "${YELLOW}========== SETTING UP GIT ==========${NC}"
 git config --global user.name kitkovsky
 git config --global user.email "$email"
 git config --global --add --bool push.autoSetupRemote true
+git config --global pager.branch false
 
 ssh-keygen -t ed25519 -C "$email"
 eval "$(ssh-agent -s)"
