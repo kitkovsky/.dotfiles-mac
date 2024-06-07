@@ -21,3 +21,4 @@ koekeishiya/formulae/skhd
 go
 pyenv
 nvm
+blackhole-2ch
