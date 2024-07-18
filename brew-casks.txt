@@ -13,3 +13,4 @@ omnidisksweeper
 slack
 postman
 tableplus
+docker
