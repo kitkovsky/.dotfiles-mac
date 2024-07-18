@@ -11,5 +11,5 @@ messenger
 iina
 omnidisksweeper
 slack
-insomnia
+postman
 tableplus
