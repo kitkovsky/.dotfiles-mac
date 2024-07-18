@@ -12,7 +12,6 @@ btop
 stow
 tree
 fzf
-youtube-dl
 vercel-cli
 tursodatabase/tap/turso
 bun
