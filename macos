@@ -68,10 +68,6 @@ echo "\n"
 echo "${YELLOW}========== STOWING DOTFILES ==========${NC}"
 stow --target=${HOME} */
 
-# NEOVIM
-echo "${YELLOW}========== INSTALLING PACKER ==========${NC}"
-git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 # RUST
 echo "${YELLOW}========== INSTALLING CARGO ==========${NC}"
 curl https://sh.rustup.rs -sSf | sh
