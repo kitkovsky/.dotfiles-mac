@@ -27,6 +27,10 @@ echo "${YELLOW}========== INSTALLING CASKS ==========${NC}"
 xargs -t -I {} brew install --cask {} < brew-casks.txt
 echo "\n"
 
+echo "${YELLOW}========== DISABLING BREW ANALYTICS ==========${NC}"
+brew analytics off
+echo "\n"
+
 # GIT
 echo "${YELLOW}========== SETTING UP GIT ==========${NC}"
 git config --global user.name kitkovsky
