@@ -30,6 +30,9 @@ require("formatter").setup({
 		go = {
 			require("formatter.filetypes.go").gofmt,
 		},
+		graphql = {
+			require("formatter.filetypes.graphql").prettier,
+		},
 		html = {
 			require("formatter.filetypes.html").prettier,
 		},

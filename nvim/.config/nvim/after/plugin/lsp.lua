@@ -75,6 +75,7 @@ vim.list_extend(ensure_installed, {
 	"dockerfile-language-server",
 	"eslint-lsp",
 	"gopls",
+	"graphql-language-service-cli",
 	"html-lsp",
 	"lua-language-server",
 	"pyright",
