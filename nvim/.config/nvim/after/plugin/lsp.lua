@@ -60,7 +60,6 @@ local servers = {
 			},
 		},
 	},
-	tsserver = {},
 }
 
 require("mason").setup()
