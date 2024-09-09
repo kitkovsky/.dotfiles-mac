@@ -14,3 +14,4 @@ slack
 postman
 tableplus
 docker
+betterdisplay
