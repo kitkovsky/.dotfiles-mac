@@ -21,3 +21,5 @@ go
 pyenv
 nvm
 blackhole-2ch
+gnu-sed
+jq
