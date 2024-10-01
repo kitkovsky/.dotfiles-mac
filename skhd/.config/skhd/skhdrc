@@ -42,3 +42,7 @@ alt - t : yabai -m window --toggle float
 
 # balance windows
 alt - b : yabai -m space --balance
+
+# increase / decrease window size
+shift + ctrl + alt - l : yabai -m window --resize right:100:0
+shift + ctrl + alt - h : yabai -m window --resize right:-100:0
