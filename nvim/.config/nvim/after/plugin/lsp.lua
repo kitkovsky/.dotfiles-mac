@@ -44,7 +44,7 @@ local servers = {
 	html = {},
 	lua_ls = {},
 	pyright = {},
-	ruff_lsp = {},
+	ruff = {},
 	rust_analyzer = {},
 	tailwindcss = {
 		settings = {
@@ -79,7 +79,6 @@ vim.list_extend(ensure_installed, {
 	"lua-language-server",
 	"pyright",
 	"ruff",
-	"ruff-lsp",
 	"rust-analyzer",
 	"stylua",
 	"tailwindcss-language-server",
