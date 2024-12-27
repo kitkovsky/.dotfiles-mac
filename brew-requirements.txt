@@ -24,3 +24,4 @@ blackhole-2ch
 gnu-sed
 jq
 maccy
+ghostty
