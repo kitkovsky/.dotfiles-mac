@@ -25,3 +25,4 @@ gnu-sed
 jq
 maccy
 ghostty
+uv
