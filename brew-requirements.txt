@@ -26,3 +26,5 @@ jq
 maccy
 ghostty
 uv
+jesseduffield/lazydocker/lazydocker
+lazydocker
