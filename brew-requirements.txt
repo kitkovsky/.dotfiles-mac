@@ -3,7 +3,6 @@ wget
 ripgrep
 tmux
 neovim
-ranger
 node
 pnpm
 fd
