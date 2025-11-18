@@ -49,7 +49,7 @@ local servers = {
 	tailwindcss = {
 		settings = {
 			tailwindCSS = {
-				classAttributes = { "class", "className", ".*ClassName" },
+				classAttributes = { "class", "className", ".*ClassName", "classNames" },
 				experimental = {
 					classRegex = {
 						{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
@@ -100,3 +100,5 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
+
+vim.lsp.enable("dartls")

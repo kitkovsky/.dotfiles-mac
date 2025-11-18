@@ -4,6 +4,7 @@ require("nvim-treesitter.configs").setup({
 		"astro",
 		"bash",
 		"css",
+		"dart",
 		"go",
 		"graphql",
 		"html",

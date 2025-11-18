@@ -24,6 +24,15 @@ require("formatter").setup({
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},
+		dart = {
+			function()
+				vim.cmd("silent !dart format " .. vim.fn.expand("%:p"))
+				vim.cmd("edit")
+			end,
+		},
+		-- dart = {
+		-- 	require("formatter.filetypes.dart").dartformat,
+		-- },
 		scss = {
 			require("formatter.filetypes.css").prettier,
 		},
@@ -76,7 +85,9 @@ vim.keymap.set("n", "<leader>nf", "<cmd>FormatWrite<CR>")
 
 vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = function()
-		if vim.bo.filetype == "oil" then
+		local filepath = vim.fn.expand("%:p")
+
+		if vim.bo.filetype == "oil" or filepath:match("work/humango/") or filepath:match("work/humango-mobile/") then
 			return
 		end
 
