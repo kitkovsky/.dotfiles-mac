@@ -17,6 +17,7 @@ end)
 vim.keymap.set("n", "<leader>hgn", function()
 	ui.nav_next()
 end)
+
 vim.keymap.set("n", "<leader>hgp", function()
 	ui.nav_prev()
 end)

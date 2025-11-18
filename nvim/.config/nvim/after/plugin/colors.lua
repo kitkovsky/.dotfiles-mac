@@ -1,5 +1,3 @@
----@diagnostic disable: unused-local
-
 local GRUVBOX_BABY = "gruvbox"
 local ROSE_PINE = "rose-pine"
 local current_colorscheme = GRUVBOX_BABY

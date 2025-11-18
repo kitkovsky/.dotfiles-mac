@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -9,7 +10,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
----@diagnostic disable-next-line: undefined-field
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -48,7 +49,6 @@ require("lazy").setup({
 	},
 
 	"ThePrimeagen/harpoon",
-	-- "mbbill/undotree",
 	"tpope/vim-fugitive",
 	"tpope/vim-commentary",
 	"tpope/vim-surround",
@@ -56,7 +56,8 @@ require("lazy").setup({
 	"github/copilot.vim",
 	"mattn/emmet-vim",
 
-	{ -- LSP
+	-- LSP
+	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
