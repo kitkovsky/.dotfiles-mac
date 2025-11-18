@@ -61,12 +61,6 @@ read
 
 echo "\n"
 
-# FONTS
-echo "${YELLOW}========== FONTS ==========${NC}"
-cd ~/Library/Fonts
-wget -i ~/.dotfiles-mac/fonts-list.txt
-cd -
-
 # YABAI
 echo "${YELLOW}========== CONFIGURING YABAI ==========${NC}"
 sudo nvram boot-args=-arm64e_preview_abi
