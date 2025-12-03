@@ -6,7 +6,6 @@ appcleaner
 logi-options-plus
 aldente
 tg-pro
-messenger
 iina
 omnidisksweeper
 slack
