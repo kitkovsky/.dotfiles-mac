@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	"ellisonleao/gruvbox.nvim",
-	-- { "rose-pine/neovim", name = "rose-pine" },
 
 	{
 		"nvim-telescope/telescope.nvim",
