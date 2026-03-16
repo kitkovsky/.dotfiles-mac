@@ -36,19 +36,15 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 
 local servers = {
 	astro = {},
-	clangd = {},
 	cssls = {},
 	dockerls = {},
 	eslint = {},
-	gopls = {},
 	html = {},
 	lua_ls = {},
 	pyright = {},
-	rust_analyzer = {},
 	tailwindcss = {
 		settings = {
 			tailwindCSS = {
-				classAttributes = { "class", "className", ".*ClassName", "classNames" },
 				experimental = {
 					classRegex = {
 						{ "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
@@ -66,18 +62,13 @@ require("mason").setup()
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
 	"astro-language-server",
-	"clang-format",
-	"clangd",
-	"cmake-language-server",
 	"css-lsp",
 	"dockerfile-language-server",
 	"eslint-lsp",
-	"gopls",
 	"graphql-language-service-cli",
 	"html-lsp",
 	"lua-language-server",
 	"pyright",
-	"rust-analyzer",
 	"stylua",
 	"tailwindcss-language-server",
 	"typescript-language-server",
