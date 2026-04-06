@@ -24,3 +24,4 @@ ghostty
 uv
 jesseduffield/lazydocker/lazydocker
 lazydocker
+tree-sitter-cli
