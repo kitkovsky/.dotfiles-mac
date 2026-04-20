@@ -33,7 +33,7 @@ require("lazy").setup({
 			{ "nvim-tree/nvim-web-devicons" },
 		},
 	},
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-context",
 
 	"stevearc/oil.nvim",
