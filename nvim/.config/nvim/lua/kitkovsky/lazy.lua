@@ -18,22 +18,15 @@ require("lazy").setup({
 
 	{
 		"nvim-telescope/telescope.nvim",
-		event = "VimEnter",
-		branch = "0.1.x",
+		version = "*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-				cond = function()
-					return vim.fn.executable("make") == 1
-				end,
-			},
-			{ "nvim-telescope/telescope-ui-select.nvim" },
-			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	 		{ "nvim-tree/nvim-web-devicons" },
+	 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		},
 	},
-	{ "nvim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-context",
 
 	"stevearc/oil.nvim",
