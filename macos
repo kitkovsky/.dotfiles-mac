@@ -61,12 +61,6 @@ read
 
 echo "\n"
 
-# YABAI
-echo "${YELLOW}========== CONFIGURING YABAI ==========${NC}"
-sudo nvram boot-args=-arm64e_preview_abi
-echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai)) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
-echo "\n"
-
 # STOWING DOTFILES
 echo "${YELLOW}========== STOWING DOTFILES ==========${NC}"
 stow --target=${HOME} */
