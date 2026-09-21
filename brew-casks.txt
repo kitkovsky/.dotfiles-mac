@@ -13,3 +13,4 @@ postman
 tableplus
 docker
 betterdisplay
+nikitabobko/tap/aerospace
