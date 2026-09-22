@@ -24,12 +24,12 @@ require("formatter").setup({
 		css = {
 			require("formatter.filetypes.css").prettier,
 		},
-		dart = {
-			function()
-				vim.cmd("silent !dart format " .. vim.fn.expand("%:p"))
-				vim.cmd("edit")
-			end,
-		},
+		-- dart = {
+		-- 	function()
+		-- 		vim.cmd("silent !dart format " .. vim.fn.expand("%:p"))
+		-- 		vim.cmd("edit")
+		-- 	end,
+		-- },
 		-- dart = {
 		-- 	require("formatter.filetypes.dart").dartformat,
 		-- },
