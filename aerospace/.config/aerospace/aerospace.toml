@@ -154,6 +154,9 @@ gaps.outer.right =      16
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
+    alt-space = 'fullscreen'
+    alt-b = 'balance-sizes'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
