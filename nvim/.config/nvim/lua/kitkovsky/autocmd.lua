@@ -18,11 +18,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		-- 3) send the 'r' key to that tmux window
 		vim.fn.system({ "tmux", "send-keys", "-t", target, "r" })
 
-		-- 1) get the current tmux session name (strip trailing newline)
-		local session = vim.fn.trim(vim.fn.system('tmux display-message -p "#S"'))
-		-- 2) compose target as session:4 (the fourth window)
-		local target = session .. ":4"
-		-- 3) send the 'r' key to that tmux window
+		target = session .. ":4"
+		vim.fn.system({ "tmux", "send-keys", "-t", target, "r" })
+		target = session .. ":5"
 		vim.fn.system({ "tmux", "send-keys", "-t", target, "r" })
 	end,
 })
