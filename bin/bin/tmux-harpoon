@@ -13,6 +13,6 @@ fi
 
 if [[ $1 == "switch" ]]; then
     session_name=$(sed -n "$2p" ~/tmux-harpoon)
-    tmux switch -t $session_name
+    tmux switch-client -t $session_name
     exit 0
 fi
